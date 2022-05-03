@@ -1,0 +1,6 @@
+from django.db import models
+
+class GameType(models.Model):
+    label = models.CharField(max_length=50)
+    
+    #Django creates id for you unlike sql
