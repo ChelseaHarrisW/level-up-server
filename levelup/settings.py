@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('MY_SECRET_KEY')
-
+SECRET_KEY = 'm)shc1gvq+d-0@d&idhy5z=3qnmbkj&cb)l&mnre+^e2kf)j2='
+#TODO reseach
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -60,6 +60,8 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://127.0.0.1:3000'
 )
+# Whitelist lets the app know what is okay to come in 
+# and is built into the "installed apps" from the rest framework 'corsheaders'
 
 # UPDATE THIS
 MIDDLEWARE = [

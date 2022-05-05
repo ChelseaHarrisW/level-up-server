@@ -9,4 +9,10 @@ class Game(models.Model):
     skill_level = models.CharField(max_length=16)
     
     #creating an instance for my classes
+    #on_delete tells django how we want the items to be deleted that contain a fk
+    # and allow us to delete across tables
     
+    
+    #Note Migration is creating the table
+    
+    # remember "Gamer" is in reference to the class of gamer created in the models
