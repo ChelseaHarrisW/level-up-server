@@ -12,3 +12,13 @@ class Event(models.Model):
 #Dropping the _id for game because Django is compairing the intire game not just the id field
 
 #adding the gamer info for join table as attendees. THAT IS Your join table^^
+
+#decorators change what comes next modifies the function
+
+    @property #this is declaring that we will be using joined
+    def joined(self):
+        return self.__joined
+    
+    @joined.setter #getter is the default so gere we are setting the property
+    def joined(self, value):
+        self.__joined = value

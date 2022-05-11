@@ -40,6 +40,7 @@ class EventView(ViewSet):
         for event in events:
             # Check to see if the gamer is in the attendees list on the event
             gamer = Gamer.objects.get(user=request.auth.user)
+            event.joined = gamer in event.attendees.all()
             serializer = EventSerializer(events, many=True)
         return Response(serializer.data)
 
@@ -111,7 +112,7 @@ class EventSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Event
-        fields = ('id', 'game', 'description', "date",
+        fields = ('id', 'game', 'description', "date", 'joined',
                   "time", "organizer", 'attendees')
         depth = 2
         # depth gives all nested user data
